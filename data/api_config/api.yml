@@ -1,0 +1,34 @@
+get_note_list:
+  method: get
+  mustKeys:
+    - userid
+    - startindex
+    - rows
+create_note_info:
+  path: /v3/notesvr/set/noteinfo
+  method: post
+  mustKeys:
+    - noteId
+  notMustKeys:
+    - star
+    - remindTime
+    - remindType
+    - groupId
+create_note_content:
+  path: /v3/notesvr/set/notecontent
+  method: post
+  mustKeys:
+    - noteId
+    - title
+    - summary
+    - body
+    - localContentVersion
+    - BodyType
+select_calendar_note:
+  path: /v3/notesvr/web/getnotes/remind
+  method: post
+  mustKeys:
+    - remindStartTime
+    - remindEndTime
+    - startIndex
+    - rows
